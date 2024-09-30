@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Comunicação</title>
+    <style>
+        body {
+            background-color: #e6affa; /* Cor de fundo para a página */
+            margin: 0; /* Remove as margens padrão */
+            padding: 0; /* Remove o padding padrão */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color:rgb(31, 22, 155);
+        }
+        h1 {
+            display: inline-block; /* Ajusta a largura ao conteúdo */
+            border: 2px solid #000; /* Define a borda */
+            padding: 10px; /* Espaço entre o texto e a borda */
+            border-radius: 8px; /* Deixa as bordas arredondadas (opcional) */
+        }
+        #icon-container {
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .icon {
+            margin: 10px;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color:blue;
+        }
+        #clearButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #clearButton:hover{
+            background-color: #cbcff8;
+        }
+        .nav-button {      
+            padding: 10px 20px;
+            font-size: 16px;  
+            cursor: pointer;
+            background-color: #095db6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    
+         .nav-button:hover {      
+            background-color: #2085f1;
+       }
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Comunicação Visual</h1>
+    <div id="icon-container">
+        <img src="icones/agua.png" class="icon" alt="Água" onclick="addToMessage('Eu quero beber água.')">
+        <img src="icones/comida.png" class="icon" alt="Comida" onclick="addToMessage('Eu quero comida.')">
+        <img src="icones/banheiro.png" class="icon" alt="Banheiro" onclick="addToMessage('Eu preciso ir ao banheiro.')">
+        <img src="icones/descanso.png" class="icon" alt="Descanso" onclick="addToMessage('Eu preciso descansar.')">
+        <img src="icones/banho.png" class="icon" alt="Banho" onclick="addToMessage('Eu preciso tomar banho.')">
+    </div>
+
+    <div id="message">Clique em um ícone para formar uma frase.</div>
+
+    <button id="clearButton" onclick="clearMessage()"><strong>Limpar Frase</strong></button>
+    <br><br>
+
+    <!-- Botão para retornar à página anterior -->
+    <footer></footer>
+        <button class="nav-button" onclick="returnToPrevious()">Retornar</button>
+        <button class="nav-button" onclick="goToIntermediateLevel()">Avançar</button>
+    </footer>
+
+ <script>
+        function addToMessage(text) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.innerText = text;
+        }
+
+        function clearMessage() {
+            document.getElementById('message').innerText = 'Clique em um ícone para formar uma frase.';
+        }
+    </script>
+
+</body>
+</html>
